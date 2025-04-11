@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Remesas Click a Cuba</title>
+  <style>
+    body {
+      background-color: #001f3f;
+      color: white;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+      font-size: 16px;
+    }
+    #resultado {
+      margin-top: 20px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    a {
+      color: #00aced;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Remesas Click a Cuba</h1>
+  <p>Tasa actual: <strong>58 CUP por 1 BRL</strong></p>
+  <p>Convierte tus Reales a CUP:</p>
+
+  <input type="number" id="valorBRL" placeholder="Cantidad en BRL">
+  <br>
+  <button onclick="convertir()">Convertir</button>
+
+  <div id="resultado"></div>
+
+  <script>
+    const tasa = 58; // Tasa fija del día
+
+    function convertir() {
+      const brl = parseFloat(document.getElementById('valorBRL').value);
+      
+      if (isNaN(brl)) {
+        document.getElementById('resultado').innerText = "Por favor, introduce un valor en BRL.";
+      } else {
+        const cup = brl * tasa;
+        document.getElementById('resultado').innerText = `Equivale a ${cup.toFixed(2)} CUP`;
+      }
+    }
+  </script>
+
+  <p>Contacto WhatsApp: <a href="https://wa.me/5541920004775">+55 41 92000-4775</a></p>
+  <p>Únete al grupo: <a href="https://chat.whatsapp.com/BoLTmTcv3tPEneyJP3j45J">Grupo en WhatsApp</a></p>
+</body>
+</html>
